@@ -8,7 +8,7 @@ variable "service_principal_name" {
 }
 
 variable "ssh_public_key" {
-  default = "C:/Users/lenovo/.ssh/id_rsa.pub"
+  default = "keys/id_rsa.pub"
 }
 
 variable "client_id" {}
