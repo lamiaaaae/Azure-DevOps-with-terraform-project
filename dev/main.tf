@@ -48,6 +48,7 @@ resource "azurerm_key_vault_secret" "example" {
 }
 
 #create Azure Kubernetes Service
+
 module "aks" {
   source                 = "../modules/aks/"
   service_principal_name = var.service_principal_name
@@ -55,14 +56,15 @@ module "aks" {
   client_secret          = module.ServicePrincipal.client_secret
   location               = var.location
   resource_group_name    = var.rgname
-  cluster_name           = var.cluster_name
-  node_pool_name         = var.node_pool_name
-  ssh_public_key         = var.ssh_public_key
-  
+  cluster_name = var.cluster_name
+  node_pool_name = var.node_pool_name
+
   depends_on = [
     module.ServicePrincipal
   ]
+
 }
+
 
 resource "local_file" "kubeconfig" {
   depends_on   = [module.aks]
