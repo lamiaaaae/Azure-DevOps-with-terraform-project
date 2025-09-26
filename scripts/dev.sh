@@ -1,8 +1,13 @@
 #!/bin/bash
 
+# Nom du Resource Group pour stocker les fichiers d'état Terraform
 RESOURCE_GROUP_NAME=terraform-state-rg
-STAGE_SA_ACCOUNT=tfstagebackend2024piyush
-DEV_SA_ACCOUNT=tfdevbackend2024piyush
+
+# Noms des Storage Accounts pour chaque environnement
+STAGE_SA_ACCOUNT=tfstagebackend2025lamiae
+DEV_SA_ACCOUNT=tfdevbackend2025lamiae
+
+# Nom du container pour le backend
 CONTAINER_NAME=tfstate
 
 
